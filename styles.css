@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    align-items: center;
+    background-color: var(--bs-gray-200);
+    flex-direction: column;
+}
+
+.name-container {
+    display: flex;
+    gap: 10px;
+}
+
+.sign-up-container {
+    width: 900px;
+    height: 700px;
+    margin-top: 120px;
+    position: fixed;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.right-side {
+    width: 65%;
+    background-color: white;
+    padding: 40px;
+}
+
+.left-side {
+    width: 35%;
+    background-image: linear-gradient(to right, #f8c830, #eba752, #db649e, #ad63c8, #806ded, #5173eb);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#first-name-format,
+#last-name-format {
+    width: 50%;
+}
+
+#sign-up-button {
+    width: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.header {
+    padding-bottom: 50px;
+    width: 50%;
+}
+
+.sign-up-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.sign-up-text-underline {
+    width: 58%;
+    background-image: linear-gradient(to right, #f8c830, #eba752, #db649e, #ad63c8, #806ded, #5173eb);
+    height: 5px;
+}
+
+.msg-popup {
+    margin-top: 40px;
+}
+
+.required-label {
+    color: var(--bs-red);
+}
