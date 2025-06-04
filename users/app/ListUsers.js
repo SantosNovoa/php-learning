@@ -8,13 +8,13 @@ function GetUsersList() {
     .then((data) => {
       console.log(data);
       List(data);
-    //   Swal.fire({
-    //     position: "top-end",
-    //     icon: "success",
-    //     title: "Users List",
-    //     showConfirmButton: false,
-    //     timer: 1500,
-    //   })
+      //   Swal.fire({
+      //     position: "top-end",
+      //     icon: "success",
+      //     title: "Users List",
+      //     showConfirmButton: false,
+      //     timer: 1500,
+      //   })
     })
     .catch((error) => console.error(error));
 }
@@ -31,7 +31,13 @@ function List(users) {
         <td>${firstName}</td>
         <td>${lastName}</td>
         <td>${email}</td>
-
+        <td>
+          <a href="../controller/update.php?id=${id}" class="btn btn-sm btn-outline-primary">Edit</a>
+          <form style="display: inline-block" method="post" action="../controller/delete.php">
+          <input type="hidden" name="id" value="${id}">
+          <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+          </form>
+        </td>
       </tr>
     `;
   });

@@ -9,26 +9,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="login.css">
 </head>
-<?php include_once "footer.php"; ?>
+<?php include_once "layout/footer.php"; ?>
+
 <body>
     <div class="msg-popup">
         <?php
         if (isset($_GET["error"]) && $_GET["error"] === "empty") {
         ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="bi bi-exclamation-circle-fill"></i> 
+                <i class="bi bi-exclamation-circle-fill"></i>
                 <strong>Validation errors!</strong> Provide the required fields. Required fields are indicated with an <strong>*</strong>.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php
-        // if the user password or email doesn't match the sign up session values post an error msg
+            // if the user password or email doesn't match the sign up session values post an error msg
         } else if (isset($_GET["error"]) && $_GET["error"] === "user-not-found") {
         ?>
-           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="bi bi-exclamation-circle-fill"></i> 
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-circle-fill"></i>
                 <strong>Validation errors!</strong> Password or Email does not match.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div> 
+            </div>
         <?php
         }
         ?>

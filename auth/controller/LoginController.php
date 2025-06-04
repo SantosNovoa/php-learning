@@ -16,7 +16,7 @@ $password = $_POST["password"];
 
 echo $email;
 if ($email === "" || $password === "") {
-    header("Location: ../../login.php?error=empty");
+    header("Location: ../../index.php?error=empty");
     exit();
 }
 
@@ -24,7 +24,7 @@ if ($email === $_SESSION["email"] && $password === $_SESSION["password"]) {
     header("Location: ../../dashboard/view/index.php?login=success");
     exit();
 } else {
-    header("Location: ../../login.php?error=user-not-found");
+    header("Location: ../../index.php?error=user-not-found");
     exit();
 }
 

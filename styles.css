@@ -69,3 +69,7 @@ body {
 .required-label {
     color: var(--bs-red);
 }
+
+.navbar {
+    width: 100%;
+}

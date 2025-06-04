@@ -7,7 +7,7 @@ class Connection
     private $host = "localhost";
     private $dbname = "mophi_db";
     private $user = "root";
-    private $password = "!Nana433550.";
+    private $password = "";
 
     public function __construct()
     {
