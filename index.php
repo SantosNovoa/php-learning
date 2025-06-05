@@ -55,6 +55,7 @@
                     <label for="floatingInput">Password <span class="required-label">*</span></label>
                 </div>
                 <button type="submit" class="btn btn-primary" id="sign-up-button">Login</button>
+                <p class="sign-in-text">Don't have an account? <a href="users/view/create.php">Sign Up</a></p>
             </form>
         </div>
     </div>

@@ -70,6 +70,11 @@ body {
     color: var(--bs-red);
 }
 
-.navbar {
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
     width: 100%;
+}
+
+.sign-up-text {
+    text-align: center;
 }

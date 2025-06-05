@@ -33,9 +33,9 @@
         </div>
     </nav>
 
-<h1>List</h1>
+    <h1>List</h1>
 
-<div class="row">
+
     <div class="col-12">
         <table class="table">
             <thead>
@@ -52,6 +52,6 @@
             </tbody>
         </table>
     </div>
-</div>
 
-<script src="../app/ListUsers.js" defer></script>
+
+    <script src="../app/ListUsers.js" defer></script>

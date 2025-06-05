@@ -67,6 +67,7 @@
                     <label for="floatingInput">Confirm Password <span class="required-label">*</span></label>
                 </div>
                 <button type="submit" class="btn btn-primary" id="sign-up-button">Sign up</button>
+                <p class="sign-in-text">Already have an account? <a href="../../index.php">Sign In</a></p>
             </form>
         </div>
     </div>
