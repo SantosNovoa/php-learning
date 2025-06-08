@@ -1,13 +1,13 @@
 <?php
-
+require_once "../../users/Model/UserModel.php";
 session_start();
 
+// establish the db connection 
+$userModel = new User();
 
-$pdo = new PDO('mysql:host=localhost;port=3306;dbname=mophi_db', 'root', '');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$email = $_POST['email'] ?? '';
-$password = $_POST["password"] ?? '';
+$email = $_POST['email'];
+$password = $_POST["password"];
 
 
 if (empty($email) || empty($password)) {
@@ -15,18 +15,22 @@ if (empty($email) || empty($password)) {
     exit();
 }
 
+// check if the email is found 
+$user = $userModel->getUserByEmail($email);
 
-$statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
-$statement->bindValue(':email', $email);
-$statement->execute();
-$user = $statement->fetch(PDO::FETCH_ASSOC);
+// $statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+// $statement->bindValue(':email', $email);
+// $statement->execute();
+// $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 
+// if the email isn't found return an error
 if (!$user) {
     header("Location: ../../index.php?error=user-not-found");
     exit();
 }
 
+// password verification
 if (password_verify($password, $user['password'])) {
 
     $_SESSION['user-id'] = $user['id'];

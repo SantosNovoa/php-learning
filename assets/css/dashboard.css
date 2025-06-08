@@ -1,0 +1,183 @@
+:root {
+  --left-space: 20px;
+}
+
+body {
+    background: #e2e7f1;
+}
+
+
+body > div {
+  box-sizing: border-box;
+}
+
+
+.project-container {
+  display: grid;
+  grid-template: 33.33% 33.33% 33.33% / 50% 50%;
+  padding-top: 10px;
+}
+
+.header {
+  height: 20%;
+  display: grid;
+  grid-template: 50% 50% / 75% 25%;
+}
+
+
+
+.content {
+  height: 100%;
+  display: grid;
+  grid-template: 10% 90% / 70% 30%;
+  color: #eeeeee;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100vh;
+  background-color: #0d1017;
+  color: white;
+  border-right: 1px solid rgba(158, 158, 158, 0.185);
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.project-title,
+.announcement-title {
+  font-weight: 700;
+  font-size: 25px;
+  color: black;
+}
+
+.announcement-title {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 105px;
+}
+
+.project-title {
+  margin-left: 40px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: var(--left-space);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 20px var(--left-space);
+}
+
+.card {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-left: 20px;
+}
+
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-image: linear-gradient(to top, #f8c830, #eba752, #db649e, #ad63c8, #806ded, #5173eb);
+  border-radius: 10px 0 0 10px; 
+}
+
+
+.title {
+  width: 50%;
+  font-weight: 900;
+  padding: 30px 0 0 20px;
+}
+
+.body {
+  width: 75%;
+  padding: 0 0 0 20px;
+}
+
+
+.announcement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news {
+  background-color: #ffffff;
+  color: black;
+  width: 70%;
+  height: 62%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin-top: 10px;
+}
+.main-title {
+  font-weight: 900;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #1a1a1a;
+  margin: 1em 0;
+  padding: 0;
+}
+.trending {
+  padding-top: 10px;
+  padding-right: 270px;
+  font-size: 25px;
+  font-weight: 700;
+  color: black;
+}
+
+.trending-container {
+  background-color: #ffffff;
+  width: 70%;
+  height: 38%;
+  padding: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: black;
+  overflow-y: scroll;
+}
+
+.social-container {
+  display: flex;
+  margin: 0 0 10px 0;
+}
+
+.pfp {
+  height: 2.9rem;
+  width: 2.9rem;
+  border-radius: 2.5rem;
+}
+
+.username {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
