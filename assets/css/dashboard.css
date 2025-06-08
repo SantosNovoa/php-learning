@@ -27,30 +27,10 @@ body > div {
 
 
 .content {
-  height: 100%;
+  max-height: 90vh;
   display: grid;
   grid-template: 10% 90% / 70% 30%;
   color: #eeeeee;
-}
-
-.left-section {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  height: 100vh;
-  background-color: #0d1017;
-  color: white;
-  border-right: 1px solid rgba(158, 158, 158, 0.185);
-}
-
-svg {
-  width: 50px;
-  height: 50px;
-  background-color: white;
-}
-
-ul {
-  list-style-type: none;
 }
 
 .project-title,
@@ -154,7 +134,7 @@ hr {
 .trending-container {
   background-color: #ffffff;
   width: 70%;
-  height: 38%;
+  max-height: 30%;
   padding: 30px;
   margin-top: 10px;
   border-radius: 10px;
@@ -177,6 +157,12 @@ hr {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.status-buttons {
+  margin: 60px 0 0 350px;
+  display: flex;
+  gap: 20px;
 }
 
 
