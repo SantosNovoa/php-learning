@@ -11,7 +11,7 @@ $password = $_POST["password"];
 $passwordConfirm = $_POST["password-confirm"];
 
 
-if ($firstName === "" || $lastName === "" || $email === "" || $password === "" || $passwordConfirm === "") {
+if (empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($passwordConfirm)) {
     header("Location: ../view/create.php?error=empty");
     exit();
 }
@@ -35,7 +35,7 @@ if (!$query) {
     exit();
 }
 
-header("Location: ../view/index.php");
+header("Location: ../../index.php?sign-up=success");
 exit();
 
 

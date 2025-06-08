@@ -1,5 +1,5 @@
 const Tbody = document.querySelector("tbody");
-
+const TrendingContainer = document.querySelector(".trending-container");
 GetUsersList();
 
 function GetUsersList() {
@@ -32,8 +32,8 @@ function List(users) {
         <td>${lastName}</td>
         <td>${email}</td>
         <td>
-          <a href="../controller/update.php?id=${id}" class="btn btn-sm btn-outline-primary">Edit</a>
-          <form style="display: inline-block" method="post" action="../controller/delete.php">
+          <a href="../controller/UpdateUsersController.php?id=${id}" class="btn btn-sm btn-outline-primary">Edit</a>
+          <form style="display: inline-block" method="post" action="../controller/DeleteUsersController.php">
           <input type="hidden" name="id" value="${id}">
           <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
           </form>
@@ -43,4 +43,43 @@ function List(users) {
   });
 
   Tbody.innerHTML = html;
+}
+
+function Trending(users) {
+  let html = "";
+  users.forEach((user) => {
+    const { firstName, lastName } = user;
+
+    html += `
+      <div class="social-container">
+          <div class="pfp">
+              <img src="../../assets/images/placeholder.jpg" class="pfp" alt="pfp">
+          </div>
+          <div class="username">
+            <span>@${firstName.toLowerCase()}${lastName.toLowerCase()}</span>
+            <span>${firstName} ${lastName}</span>
+          </div>
+      </div>
+    `;
+
+   TrendingContainer.innerHTML = html;
+  });
+}
+
+GetTrendingUsersList()
+function GetTrendingUsersList() {
+  fetch("../../users/controller/GetUsersController.php")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      Trending(data);
+      //   Swal.fire({
+      //     position: "top-end",
+      //     icon: "success",
+      //     title: "Users List",
+      //     showConfirmButton: false,
+      //     timer: 1500,
+      //   })
+    })
+    .catch((error) => console.error(error));
 }
