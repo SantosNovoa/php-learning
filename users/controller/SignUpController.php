@@ -28,7 +28,7 @@ if ($password != $passwordConfirm) {
     exit();
 }
 
-$query = $user->store($firstName, $lastName, $email, password_hash($password, PASSWORD_DEFAULT));
+$query = $user->store(ucwords(strtolower($firstName)), ucwords(strtolower($lastName)), $email, password_hash($password, PASSWORD_DEFAULT));
 
 if (!$query) {
     header("Location:  ../view/create.php?error=store-failed");
