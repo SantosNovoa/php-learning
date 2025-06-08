@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             email = :email,
                                             password = :password
                                             WHERE id = :id");
-        $statement->bindValue(':password', $hashedPassword);                                      
+        $statement->bindValue(':password', $hashedPassword);
     } else {
         $statement = $pdo->prepare("UPDATE users SET firstName = :firstName,
                                             lastName = :lastName,
@@ -50,8 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->bindValue(':email', $email);
     $statement->bindValue(':id', $id);
     $statement->execute();
-        header('Location: ../view/index.php');
-        exit;
+    header('Location: ../view/index.php');
+    exit;
 }
 
 ?>
@@ -68,8 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <h1>Edit form</h1>
 <p><a href="../view/index.php" class="btn btn-secondary">Back to list</a></p>
+
 <body>
-    <form enctype="application/x-www-form-urlencoded" method="post">
+    <form enctype="application/x-www-form-urlencoded" id="editForm" method="post">
         <div class="form-floating mb-3" id="first-name-format">
             <input type="first-name" name="first-name" class="form-control" value="<?php echo $firstName ?>">
             <label for="floatingInput">First Name <span class="required-label">*</span></label>
@@ -88,6 +89,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <button type="submit" class="btn btn-primary" id="sign-up-button">Update</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("editForm");
+
+            form.addEventListener("submit", function(e) {
+                e.preventDefault(); 
+
+                Swal.fire({
+                    title: "Confirm Update?",
+                    text: "Do you want to apply these changes?",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, update user",
+                    cancelButtonText: "Cancel",
+                    confirmButtonColor: "#0d6efd",
+                    cancelButtonColor: "#6c757d"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit(); 
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

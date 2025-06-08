@@ -8,11 +8,13 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $id = $_POST['id'] ?? null;
 
 if (!$id) {
-    header("Location: ../view/index.php");
+    http_response_code(400);
+    echo "Missing ID";
     exit;
 }
 
 $statement = $pdo->prepare('DELETE FROM users WHERE id = :id');
 $statement->bindValue(':id', $id);
 $statement->execute();
-header("Location: ../view/index.php");
+http_response_code(200);
+echo "Deleted";
